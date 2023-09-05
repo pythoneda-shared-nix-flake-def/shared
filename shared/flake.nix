@@ -22,7 +22,7 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-git-shared = {
-      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a15?dir=shared";
+      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a17?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -37,11 +37,16 @@
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a38?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a40?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
         "pythoneda-shared-pythoneda-banner";
+    };
+    stringtemplate3 = {
+      url = "github:rydnr/nix-flakes/main?dir=stringtemplate3";
+      inputs.nixos.follows = "nixos";
+      inputs.flake-utils.follows = "flake-utils";
     };
   };
   outputs = inputs:
@@ -50,8 +55,8 @@
       let
         org = "pythoneda-shared-nix-flake";
         repo = "shared";
-        version = "0.0.1a1";
-        sha256 = "sha256-3mp4EHx/Fp5ee+lW/wUS1rKNIZjSoN2Rlffdlh7GeAY=";
+        version = "0.0.1a2";
+        sha256 = "sha256-Q9o5weIMvdqS4IWJTlWS7v2uV5bhZNyTkxGVoLtYI/U=";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.nix_flake";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
@@ -68,7 +73,8 @@
         nixpkgsRelease = "nixos-${nixosVersion}";
         shared = import "${pythoneda-shared-pythoneda-banner}/nix/shared.nix";
         pythoneda-shared-nix-flake-shared-for = { python
-          , pythoneda-shared-git-shared, pythoneda-shared-pythoneda-domain }:
+          , pythoneda-shared-git-shared, pythoneda-shared-pythoneda-domain
+          , stringtemplate3 }:
           let
             pnameWithUnderscores =
               builtins.replaceStrings [ "-" ] [ "_" ] pname;
@@ -91,6 +97,8 @@
               pythonedaSharedGitShared = pythoneda-shared-git-shared.version;
               pythonedaSharedPythonedaDomain =
                 pythoneda-shared-pythoneda-domain.version;
+              stringtemplate3 = stringtemplate3.version;
+
               src = pyprojectTemplateFile;
             };
             src = pkgs.fetchFromGitHub {
@@ -105,6 +113,7 @@
             propagatedBuildInputs = with python.pkgs; [
               pythoneda-shared-git-shared
               pythoneda-shared-pythoneda-domain
+              stringtemplate3
             ];
 
             # pythonImportsCheck = [ pythonpackage ];
@@ -178,6 +187,8 @@
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python38;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python38;
+              stringtemplate3 =
+                stringtemplate3.packages.${system}.stringtemplate3-python38;
             };
           pythoneda-shared-nix-flake-shared-python39 =
             pythoneda-shared-nix-flake-shared-for {
@@ -186,6 +197,8 @@
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python39;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python39;
+              stringtemplate3 =
+                stringtemplate3.packages.${system}.stringtemplate3-python39;
             };
           pythoneda-shared-nix-flake-shared-python310 =
             pythoneda-shared-nix-flake-shared-for {
@@ -194,6 +207,8 @@
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python310;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python310;
+              stringtemplate3 =
+                stringtemplate3.packages.${system}.stringtemplate3-python310;
             };
         };
       });

@@ -49,17 +49,17 @@
       },
       "locked": {
         "dir": "shared",
-        "lastModified": 1692978264,
-        "narHash": "sha256-VX/0b7ai3NRfi9gMfm2WSLsP/tGWmVjn1v6pnLljmoM=",
+        "lastModified": 1693923014,
+        "narHash": "sha256-xCiyietwNpbEPEwYdSkr+rEtycE/53Ak+kcw/XSlPJ8=",
         "owner": "pythoneda-shared-git",
         "repo": "shared-artifact",
-        "rev": "418140c62c3f93b0526075a738f13b8362136500",
+        "rev": "f5ec8c87a5dbd6136e20c864c6a97016f83b31e8",
         "type": "github"
       },
       "original": {
         "dir": "shared",
         "owner": "pythoneda-shared-git",
-        "ref": "0.0.1a15",
+        "ref": "0.0.1a17",
         "repo": "shared-artifact",
         "type": "github"
       }
@@ -102,17 +102,17 @@
       },
       "locked": {
         "dir": "domain",
-        "lastModified": 1692977885,
-        "narHash": "sha256-7fExe7LpWSvyYStX3lCGmNn+J/u5peL32ULZIYuAAt8=",
+        "lastModified": 1693922651,
+        "narHash": "sha256-ekdEElERbZqW5I0fYI0kt1TRvUrgq4YhBr+2sNnMzTU=",
         "owner": "pythoneda-shared-pythoneda",
         "repo": "domain-artifact",
-        "rev": "e756161bf96cbe600fbd6d1f05edb030c619fb3d",
+        "rev": "37c8358d0912ec9083f3cbd609494fb4aa396bb2",
         "type": "github"
       },
       "original": {
         "dir": "domain",
         "owner": "pythoneda-shared-pythoneda",
-        "ref": "0.0.1a38",
+        "ref": "0.0.1a40",
         "repo": "domain-artifact",
         "type": "github"
       }
@@ -123,7 +123,34 @@
         "nixos": "nixos",
         "pythoneda-shared-git-shared": "pythoneda-shared-git-shared",
         "pythoneda-shared-pythoneda-banner": "pythoneda-shared-pythoneda-banner",
-        "pythoneda-shared-pythoneda-domain": "pythoneda-shared-pythoneda-domain"
+        "pythoneda-shared-pythoneda-domain": "pythoneda-shared-pythoneda-domain",
+        "stringtemplate3": "stringtemplate3"
+      }
+    },
+    "stringtemplate3": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixos": [
+          "nixos"
+        ]
+      },
+      "locked": {
+        "dir": "stringtemplate3",
+        "lastModified": 1693591460,
+        "narHash": "sha256-ZwN5/uCYcRZySihPEnMUfFwOTrEdouUj4QrwmFNj5D8=",
+        "owner": "rydnr",
+        "repo": "nix-flakes",
+        "rev": "5037185cb97c9fa0cb899603a8261b5f68096913",
+        "type": "github"
+      },
+      "original": {
+        "dir": "stringtemplate3",
+        "owner": "rydnr",
+        "ref": "main",
+        "repo": "nix-flakes",
+        "type": "github"
       }
     }
   },
