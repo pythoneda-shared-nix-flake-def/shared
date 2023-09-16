@@ -22,7 +22,7 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-git-shared = {
-      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a18?dir=shared";
+      url = "github:pythoneda-shared-git/shared-artifact/0.0.1a19?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -37,7 +37,7 @@
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a40?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a41?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -55,8 +55,8 @@
       let
         org = "pythoneda-shared-nix-flake";
         repo = "shared";
-        version = "0.0.1a4";
-        sha256 = "sha256-1J/TagPEeD2o5dzWjorXeCfpfz1dSkxnho8BZ55GM7Q=";
+        version = "0.0.1a5";
+        sha256 = "sha256-PxhHPpFk7fERzZnkzEzqQnd20r8yNRAdrJbJ28rnqWc=";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.nix_flake";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
