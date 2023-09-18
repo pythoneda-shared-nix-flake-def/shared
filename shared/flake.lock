@@ -49,17 +49,17 @@
       },
       "locked": {
         "dir": "shared",
-        "lastModified": 1694877181,
-        "narHash": "sha256-T01bQ40PwFmFx2xm5kHZA2LQo3EHr6EA/A0DpoJXynM=",
+        "lastModified": 1695046305,
+        "narHash": "sha256-wjJQviUSeTZrcFS/5Pyhr/idD1AdmVMdgy136Tmh9yM=",
         "owner": "pythoneda-shared-git",
         "repo": "shared-artifact",
-        "rev": "0bb853f47f2046d8ae92786d413a7ca6845acdf1",
+        "rev": "a3d463c47e944ed76661ea5558888b2a4834448f",
         "type": "github"
       },
       "original": {
         "dir": "shared",
         "owner": "pythoneda-shared-git",
-        "ref": "0.0.1a19",
+        "ref": "0.0.1a20",
         "repo": "shared-artifact",
         "type": "github"
       }
@@ -102,17 +102,17 @@
       },
       "locked": {
         "dir": "domain",
-        "lastModified": 1694876642,
-        "narHash": "sha256-QCo+nJVBVi9vmM/Wv+oYl9zwxAjAr8fPtBfArsNcMdY=",
+        "lastModified": 1695045759,
+        "narHash": "sha256-9XvevkXK6vaEi3mIv6QTg4o45byhIiTPguKtvV7JBlY=",
         "owner": "pythoneda-shared-pythoneda",
         "repo": "domain-artifact",
-        "rev": "7d110220f52e34e19708076f527f81b725c92d38",
+        "rev": "02512ff26d98cfbb4f1ebe54e1391e560e2d8364",
         "type": "github"
       },
       "original": {
         "dir": "domain",
         "owner": "pythoneda-shared-pythoneda",
-        "ref": "0.0.1a41",
+        "ref": "0.0.1a42",
         "repo": "domain-artifact",
         "type": "github"
       }
@@ -138,17 +138,17 @@
       },
       "locked": {
         "dir": "stringtemplate3",
-        "lastModified": 1693591460,
-        "narHash": "sha256-ZwN5/uCYcRZySihPEnMUfFwOTrEdouUj4QrwmFNj5D8=",
+        "lastModified": 1695028695,
+        "narHash": "sha256-nEyAQq8IJ8Cn8Rnf0jOqfhQ9ya6qtbmf5vuhsDN+KKw=",
         "owner": "rydnr",
         "repo": "nix-flakes",
-        "rev": "5037185cb97c9fa0cb899603a8261b5f68096913",
+        "rev": "81e0f7168b7d949c1e1f85897645cba7be7f325c",
         "type": "github"
       },
       "original": {
         "dir": "stringtemplate3",
         "owner": "rydnr",
-        "ref": "main",
+        "ref": "stringtemplate3-3.1",
         "repo": "nix-flakes",
         "type": "github"
       }
