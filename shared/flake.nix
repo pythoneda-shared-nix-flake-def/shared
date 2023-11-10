@@ -112,6 +112,7 @@
 
             nativeBuildInputs = with python.pkgs; [ pip pkgs.jq poetry-core ];
             propagatedBuildInputs = with python.pkgs; [
+              path
               pythoneda-shared-git-shared
               pythoneda-shared-pythoneda-domain
               stringtemplate3
