@@ -54,8 +54,8 @@
       let
         org = "pythoneda-shared-nix-flake";
         repo = "shared";
-        version = "0.0.7";
-        sha256 = "0jid6zjkv9nix5v94qq42kh6slriy8hkm3s2bc51kd46wigd34mk";
+        version = "0.0.8";
+        sha256 = "168n0z8h15xmd11gpiffc31qaw7vrdmpw15xrkx4sbmz19sard78";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.nix_flake";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
