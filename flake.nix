@@ -24,22 +24,19 @@
     pythoneda-shared-git-shared = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      inputs.pythoneda-shared-banner.follows =
-        "pythoneda-shared-banner";
-      inputs.pythoneda-shared-domain.follows =
-        "pythoneda-shared-domain";
+      inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
+      inputs.pythoneda-shared-domain.follows = "pythoneda-shared-domain";
       url = "github:pythoneda-shared-git-def/shared/0.0.29";
     };
     pythoneda-shared-banner = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      url = "github:pythoneda-shared-def/banner/0.0.46";
+      url = "github:pythoneda-shared-def/banner/0.0.47";
     };
     pythoneda-shared-domain = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      inputs.pythoneda-shared-banner.follows =
-        "pythoneda-shared-banner";
+      inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
       url = "github:pythoneda-shared-def/domain/0.0.26";
     };
     stringtemplate3 = {
@@ -57,7 +54,7 @@
         version = "0.0.11";
         sha256 = "1my3lzz2kmsilwx7m1758zsrdnvvyxw25q5fp23rhrv0ivng8qil";
         pname = "${org}-${repo}";
-        pythonpackage = "pythoneda.shared.nix_flake";
+        pythonpackage = "pythoneda.shared.nix.flake";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
         pkgs = import nixos { inherit system; };
         description = "Shared kernel for Nix Flakes";
@@ -95,8 +92,7 @@
               inherit homepage package pname pythonMajorMinorVersion
                 pythonpackage version;
               pythonedaSharedGitShared = pythoneda-shared-git-shared.version;
-              pythonedaSharedDomain =
-                pythoneda-shared-domain.version;
+              pythonedaSharedDomain = pythoneda-shared-domain.version;
               stringtemplate3 = stringtemplate3.version;
 
               src = pyprojectTemplateFile;
