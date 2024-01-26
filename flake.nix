@@ -37,7 +37,7 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
-      url = "github:pythoneda-shared-def/domain/0.0.28";
+      url = "github:pythoneda-shared-def/domain/0.0.30";
     };
     stringtemplate3 = {
       inputs.flake-utils.follows = "flake-utils";
