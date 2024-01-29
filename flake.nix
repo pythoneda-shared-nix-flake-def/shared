@@ -26,7 +26,7 @@
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
       inputs.pythoneda-shared-domain.follows = "pythoneda-shared-domain";
-      url = "github:pythoneda-shared-git-def/shared/0.0.34";
+      url = "github:pythoneda-shared-git-def/shared/0.0.35";
     };
     pythoneda-shared-banner = {
       inputs.flake-utils.follows = "flake-utils";
@@ -37,7 +37,7 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
-      url = "github:pythoneda-shared-def/domain/0.0.30";
+      url = "github:pythoneda-shared-def/domain/0.0.31";
     };
     stringtemplate3 = {
       inputs.flake-utils.follows = "flake-utils";
@@ -51,8 +51,8 @@
       let
         org = "pythoneda-shared-nix-flake";
         repo = "shared";
-        version = "0.0.12";
-        sha256 = "1r7ap4fyail6i2n51mjyvvzix7848c1kra55j9rqsz5xcyl1lp73";
+        version = "0.0.14";
+        sha256 = "18va00wac64k1vjhmamq7p1d73as1ckzydl2limg8ckcjqa5iwm8";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.nix.flake";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
