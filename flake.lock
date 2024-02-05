@@ -133,16 +133,16 @@
         "pythoneda-shared-pythonlang-shell": "pythoneda-shared-pythonlang-shell"
       },
       "locked": {
-        "lastModified": 1707152863,
-        "narHash": "sha256-g3lgTUhP/9g1XQgOqzR3E7yGBVsSI3Bv4fFVDB+DEL4=",
+        "lastModified": 1707172629,
+        "narHash": "sha256-0naLR921YkVjjeoEZaEYYPPnnxJGiKjsdn5ZOBzkDR4=",
         "owner": "pythoneda-shared-git-def",
         "repo": "shared",
-        "rev": "d2282f58650ed0fae01cbc60362becbb75ec69c0",
+        "rev": "17f5273165f14d648e7a7cebef7287342c375617",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-git-def",
-        "ref": "0.0.37",
+        "ref": "0.0.38",
         "repo": "shared",
         "type": "github"
       }
