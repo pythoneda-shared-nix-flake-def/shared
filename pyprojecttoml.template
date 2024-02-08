@@ -28,7 +28,7 @@ packages = [{include = "@package@"}]
 [tool.poetry.dependencies]
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-git-shared = "^@pythonedaSharedGitShared@"
-pythoneda-shared-domain = "^@pythonedaSharedDomain@"
+pythoneda-shared-pythonlang-domain = "^@pythonedaSharedPythonlangDomain@"
 stringtemplate3 = "^@stringtemplate3@"
 
 [build-system]

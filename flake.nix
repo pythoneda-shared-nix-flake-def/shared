@@ -24,20 +24,23 @@
     pythoneda-shared-git-shared = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
-      inputs.pythoneda-shared-domain.follows = "pythoneda-shared-domain";
-      url = "github:pythoneda-shared-git-def/shared/0.0.39";
+      inputs.pythoneda-shared-pythonlang-banner.follows =
+        "pythoneda-shared-pythonlang-banner";
+      inputs.pythoneda-shared-pythonlang-domain.follows =
+        "pythoneda-shared-pythonlang-domain";
+      url = "github:pythoneda-shared-git-def/shared/0.0.40";
     };
-    pythoneda-shared-banner = {
+    pythoneda-shared-pythonlang-banner = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      url = "github:pythoneda-shared-def/banner/0.0.47";
+      url = "github:pythoneda-shared-pythonlang-def/banner/0.0.49";
     };
-    pythoneda-shared-domain = {
+    pythoneda-shared-pythonlang-domain = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      inputs.pythoneda-shared-banner.follows = "pythoneda-shared-banner";
-      url = "github:pythoneda-shared-def/domain/0.0.33";
+      inputs.pythoneda-shared-pythonlang-banner.follows =
+        "pythoneda-shared-pythonlang-banner";
+      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.36";
     };
     stringtemplate3 = {
       inputs.flake-utils.follows = "flake-utils";
@@ -68,9 +71,9 @@
         nixosVersion = builtins.readFile "${nixos}/.version";
         nixpkgsRelease =
           builtins.replaceStrings [ "\n" ] [ "" ] "nixos-${nixosVersion}";
-        shared = import "${pythoneda-shared-banner}/nix/shared.nix";
+        shared = import "${pythoneda-shared-pythonlang-banner}/nix/shared.nix";
         pythoneda-shared-nix-flake-shared-for = { python
-          , pythoneda-shared-git-shared, pythoneda-shared-domain
+          , pythoneda-shared-git-shared, pythoneda-shared-pythonlang-domain
           , stringtemplate3 }:
           let
             pnameWithUnderscores =
@@ -92,7 +95,8 @@
               inherit homepage package pname pythonMajorMinorVersion
                 pythonpackage version;
               pythonedaSharedGitShared = pythoneda-shared-git-shared.version;
-              pythonedaSharedDomain = pythoneda-shared-domain.version;
+              pythonedaSharedPythonlangDomain =
+                pythoneda-shared-pythonlang-domain.version;
               stringtemplate3 = stringtemplate3.version;
 
               src = pyprojectTemplateFile;
@@ -109,7 +113,7 @@
             propagatedBuildInputs = with python.pkgs; [
               path
               pythoneda-shared-git-shared
-              pythoneda-shared-domain
+              pythoneda-shared-pythonlang-domain
               stringtemplate3
             ];
 
@@ -146,58 +150,58 @@
             pythoneda-shared-nix-flake-shared-python311;
           pythoneda-shared-nix-flake-shared-python38 = shared.devShell-for {
             banner = "${
-                pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python38
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python38
               }/bin/banner.sh";
             extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-shared-nix-flake-shared-python38;
             python = pkgs.python38;
-            pythoneda-shared-banner =
-              pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python38;
-            pythoneda-shared-domain =
-              pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python38;
+            pythoneda-shared-pythonlang-banner =
+              pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python38;
+            pythoneda-shared-pythonlang-domain =
+              pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python38;
             inherit archRole layer org pkgs repo space;
           };
           pythoneda-shared-nix-flake-shared-python39 = shared.devShell-for {
             banner = "${
-                pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python39
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python39
               }/bin/banner.sh";
             extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-shared-nix-flake-shared-python39;
             python = pkgs.python39;
-            pythoneda-shared-banner =
-              pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python39;
-            pythoneda-shared-domain =
-              pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python39;
+            pythoneda-shared-pythonlang-banner =
+              pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python39;
+            pythoneda-shared-pythonlang-domain =
+              pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python39;
             inherit archRole layer org pkgs repo space;
           };
           pythoneda-shared-nix-flake-shared-python310 = shared.devShell-for {
             banner = "${
-                pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python310
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python310
               }/bin/banner.sh";
             extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-shared-nix-flake-shared-python310;
             python = pkgs.python310;
-            pythoneda-shared-banner =
-              pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python310;
-            pythoneda-shared-domain =
-              pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python310;
+            pythoneda-shared-pythonlang-banner =
+              pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python310;
+            pythoneda-shared-pythonlang-domain =
+              pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python310;
             inherit archRole layer org pkgs repo space;
           };
           pythoneda-shared-nix-flake-shared-python311 = shared.devShell-for {
             banner = "${
-                pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python311
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python311
               }/bin/banner.sh";
             extra-namespaces = "";
             nixpkgs-release = nixpkgsRelease;
             package = packages.pythoneda-shared-nix-flake-shared-python311;
             python = pkgs.python311;
-            pythoneda-shared-banner =
-              pythoneda-shared-banner.packages.${system}.pythoneda-shared-banner-python311;
-            pythoneda-shared-domain =
-              pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python311;
+            pythoneda-shared-pythonlang-banner =
+              pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python311;
+            pythoneda-shared-pythonlang-domain =
+              pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python311;
             inherit archRole layer org pkgs repo space;
           };
         };
@@ -210,8 +214,8 @@
               python = pkgs.python38;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python38;
-              pythoneda-shared-domain =
-                pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python38;
+              pythoneda-shared-pythonlang-domain =
+                pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python38;
               stringtemplate3 =
                 stringtemplate3.packages.${system}.stringtemplate3-python38;
             };
@@ -220,8 +224,8 @@
               python = pkgs.python39;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python39;
-              pythoneda-shared-domain =
-                pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python39;
+              pythoneda-shared-pythonlang-domain =
+                pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python39;
               stringtemplate3 =
                 stringtemplate3.packages.${system}.stringtemplate3-python39;
             };
@@ -230,8 +234,8 @@
               python = pkgs.python310;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python310;
-              pythoneda-shared-domain =
-                pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python310;
+              pythoneda-shared-pythonlang-domain =
+                pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python310;
               stringtemplate3 =
                 stringtemplate3.packages.${system}.stringtemplate3-python310;
             };
@@ -240,8 +244,8 @@
               python = pkgs.python311;
               pythoneda-shared-git-shared =
                 pythoneda-shared-git-shared.packages.${system}.pythoneda-shared-git-shared-python311;
-              pythoneda-shared-domain =
-                pythoneda-shared-domain.packages.${system}.pythoneda-shared-domain-python311;
+              pythoneda-shared-pythonlang-domain =
+                pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python311;
               stringtemplate3 =
                 stringtemplate3.packages.${system}.stringtemplate3-python311;
             };
