@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 {
-  description = "Shared kernel for Nix Flakes";
+  description = "Flake for pythoneda-shared-nix-flake/shared";
   inputs = rec {
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     nixos.url = "github:NixOS/nixpkgs/24.05";
@@ -45,7 +45,7 @@
     stringtemplate3 = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixos.follows = "nixos";
-      url = "github:rydnr/nix-flakes/0.1.17?dir=stringtemplate3";
+      url = "github:rydnr/nix-flakes/stringtemplate3-3.1b?dir=stringtemplate3";
     };
   };
   outputs = inputs:
