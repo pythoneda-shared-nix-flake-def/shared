@@ -199,17 +199,17 @@
       },
       "locked": {
         "dir": "stringtemplate3",
-        "lastModified": 1707764998,
-        "narHash": "sha256-Op0o7E32KYnNOGCAgdwtcauM19gKdQYCXeMHaDbbKtg=",
+        "lastModified": 1731751186,
+        "narHash": "sha256-k0/qxz31tZpuRuTIXKnEGlIbA3mDDrwZ7tMSx20W9CA=",
         "owner": "rydnr",
         "repo": "nix-flakes",
-        "rev": "b1b4c9c15a5d56cad76bfbbb5c1cd9340aa59409",
+        "rev": "3310eb20720fa14c17f8b21958814165d79dc2ec",
         "type": "github"
       },
       "original": {
         "dir": "stringtemplate3",
         "owner": "rydnr",
-        "ref": "0.1.17",
+        "ref": "stringtemplate3-3.1c",
         "repo": "nix-flakes",
         "type": "github"
       }
