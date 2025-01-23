@@ -45,7 +45,7 @@
     stringtemplate3 = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:rydnr/nix-flakes/stringtemplate3-3.1.2?dir=stringtemplate3";
+      url = "github:rydnr/nix-flakes/stringtemplate3-3.1.4?dir=stringtemplate3";
     };
   };
   outputs = inputs:
@@ -110,8 +110,8 @@
             format = "pyproject";
 
             nativeBuildInputs = with python.pkgs; [ pip poetry-core ];
-            propagatedBuildInputs = with python.pkgs; [
-              path
+            propagatedBuildInputs = [
+              python.pkgs.path
               pythoneda-shared-git-shared
               pythoneda-shared-pythonlang-domain
               stringtemplate3
